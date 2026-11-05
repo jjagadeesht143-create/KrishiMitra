@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Mandi{% endblock %}
+{% block content %}
+<h1>Mandi prices</h1>
+<p class="lede">Crop name is required. Market name is optional.</p>
+<form id="mandi-form" class="form">
+  <label>Crop (required, example: Tomato)
+    <input name="crop" maxlength="80" required />
+  </label>
+  <label>Market (optional, example: Madurai)
+    <input name="market" maxlength="120" />
+  </label>
+  <button type="submit" data-i18n="send">Get price</button>
+</form>
+<p class="loading" data-loading hidden>Loading…</p>
+<p class="error" data-error hidden></p>
+<div class="result" data-result hidden></div>
+{% endblock %}

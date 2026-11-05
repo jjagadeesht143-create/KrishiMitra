@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Service dashboard</h1>
+<p class="lede">Green means ready. This page only reads status, it changes nothing.</p>
+<p class="loading" data-loading>Loading…</p>
+<p class="error" data-error hidden></p>
+<ul class="tiles" id="status-tiles"></ul>
+{% endblock %}

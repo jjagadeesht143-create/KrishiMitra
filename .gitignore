@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Secrets - NEVER commit real keys
+.env
+
+# SQLite database (local only)
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# Uploaded farmer files (local only, keep folder)
+uploads/*
+!uploads/.gitkeep
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.env
+.env.*
+!.env.example
+
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+uploads/
+_backup_junk/
+krishimitra_image_*/
+krishimitra_test_*/
+krishimitra_voice_*/
+
+node_modules/
+dist/
+build/
+*.log
+
+*.db
+*.db-backup
+*.db.backup
+data/
+!data/.gitkeep
+
+*.db
+*.db-backup
+*.db.backup
+data/

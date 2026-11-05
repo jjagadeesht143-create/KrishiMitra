@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="{{ plan.language }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ plan.title }} - {{ plan.farmer_name }}</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px 16px;
+      background: #eef2ee;
+      color: #1f2933;
+      font-family: "Nirmala UI", "Latha", "Noto Sans", "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    .card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #d3dcd3;
+      border-radius: 10px;
+      padding: 28px 28px 24px;
+    }
+    h1 {
+      margin: 0 0 4px;
+      font-size: 26px;
+      color: #1c5c2c;
+    }
+    .meta {
+      margin: 0 0 16px;
+      font-size: 14px;
+      color: #4a5560;
+    }
+    h2 {
+      margin: 22px 0 8px;
+      font-size: 17px;
+      color: #1c5c2c;
+    }
+    p { margin: 6px 0; }
+    ul, ol { margin: 6px 0; padding-left: 22px; }
+    li { margin: 4px 0; }
+    .safety {
+      background: #f4f7f4;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 18px;
+    }
+    .footer {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #4a5560;
+    }
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .card { border: none; max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>{{ plan.title }}</h1>
+    <p class="meta">{{ plan.labels.farmer }}: {{ plan.farmer_name }} &middot; {{ plan.labels.village }}: {{ plan.village }}</p>
+    <p class="meta">{{ plan.labels.crop }}: {{ plan.crop_display }} &middot; {{ plan.labels.topic }}: {{ plan.topic_display }}</p>
+
+    <h2>{{ plan.labels.summary }}</h2>
+    <p>{{ plan.summary }}</p>
+
+    <h2>{{ plan.labels.steps }}</h2>
+    <ol>
+      {% for step in plan.immediate_steps %}
+      <li>{{ step }}</li>
+      {% endfor %}
+    </ol>
+
+    <h2>{{ plan.labels.watch }}</h2>
+    <ul>
+      {% for sign in plan.watch_out_for %}
+      <li>{{ sign }}</li>
+      {% endfor %}
+    </ul>
+
+    <h2>{{ plan.labels.followup }}</h2>
+    <ol>
+      {% for item in plan.follow_up %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ol>
+
+    <h2>{{ plan.labels.questions }}</h2>
+    <ul>
+      {% for question in plan.questions_for_expert %}
+      <li>{{ question }}</li>
+      {% endfor %}
+    </ul>
+
+    <div class="safety">
+      <h2>{{ plan.labels.safety }}</h2>
+      <p>{{ plan.safety_note }}</p>
+      <h2>{{ plan.labels.expert }}</h2>
+      <p>{{ plan.expert_referral }}</p>
+    </div>
+
+    <p class="footer">{{ plan.disclaimer }}</p>
+    <p class="footer">{{ plan.labels.generated }}: {{ plan.generated_at }}</p>
+  </div>
+</body>
+</html>

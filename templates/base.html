@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}KrishiMitra{% endblock %} - KrishiMitra</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">KrishiMitra</a>
+    <nav class="nav" aria-label="Main">
+      <a href="/pages/dashboard">Dashboard</a>
+      <a href="/pages/chat">Chat</a>
+      <a href="/pages/weather">Weather</a>
+      <a href="/pages/mandi">Mandi</a>
+      <a href="/pages/plan">Plan</a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en">English</button>
+      <button type="button" data-lang="ta">தமிழ்</button>
+      <button type="button" data-lang="hi">हिन्दी</button>
+    </div>
+  </header>
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="foot">
+    <p>KrishiMitra farmer help. Free service. Data stays on this device server.</p>
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

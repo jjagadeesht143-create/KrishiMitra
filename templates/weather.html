@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Weather{% endblock %}
+{% block content %}
+<h1>Weather for your farm</h1>
+<p class="lede">Type a city name, or give latitude and longitude together.</p>
+<form id="weather-form" class="form">
+  <label>City (example: Madurai)
+    <input name="city" maxlength="120" />
+  </label>
+  <div class="row">
+    <label>Latitude (-90 to 90)
+      <input name="lat" inputmode="decimal" />
+    </label>
+    <label>Longitude (-180 to 180)
+      <input name="lon" inputmode="decimal" />
+    </label>
+  </div>
+  <button type="submit" data-i18n="send">Get weather</button>
+</form>
+<p class="loading" data-loading hidden>Loading…</p>
+<p class="error" data-error hidden></p>
+<div class="result" data-result hidden></div>
+{% endblock %}

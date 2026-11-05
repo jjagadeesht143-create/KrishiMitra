@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h1>Register as farmer</h1>
+<p class="lede">One minute. Your phone number is your unique ID.</p>
+<form id="register-form" class="form">
+  <label>Name (required)
+    <input name="name" maxlength="100" required autocomplete="name" />
+  </label>
+  <label>Phone (required, 7-15 digits)
+    <input name="phone" inputmode="tel" required autocomplete="tel" />
+  </label>
+  <label>Village (optional)
+    <input name="village" maxlength="100" />
+  </label>
+  <label>District (optional)
+    <input name="district" maxlength="100" />
+  </label>
+  <button type="submit" data-i18n="submit">Register</button>
+</form>
+<p class="loading" data-loading hidden>Loading…</p>
+<p class="error" data-error hidden></p>
+<div class="result" data-result hidden></div>
+{% endblock %}

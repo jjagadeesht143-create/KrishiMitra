@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Rescue plan{% endblock %}
+{% block content %}
+<h1>My rescue plan</h1>
+<p class="lede">Type your farmer ID to see your weekly safe-steps plan.</p>
+<form id="plan-form" class="form">
+  <label>Farmer ID (required)
+    <input name="farmer_id" inputmode="numeric" required />
+  </label>
+  <button type="submit" data-i18n="send">Get my plan</button>
+</form>
+<p class="loading" data-loading hidden>Loading…</p>
+<p class="error" data-error hidden></p>
+<div class="result" data-result hidden></div>
+{% endblock %}

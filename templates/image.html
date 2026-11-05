@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Crop photo{% endblock %}
+{% block content %}
+<h1>Crop photo check</h1>
+<p class="lede">Upload one clear leaf photo. JPG, JPEG, PNG, or WebP, max 10 MB.</p>
+<form id="image-form" class="form">
+  <label>Photo file (required)
+    <input type="file" name="file" accept=".jpg,.jpeg,.png,.webp" required />
+  </label>
+  <button type="submit" data-i18n="send">Check photo</button>
+</form>
+<p class="loading" data-loading hidden>Loading…</p>
+<p class="error" data-error hidden></p>
+<div class="result" data-result hidden></div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Voice{% endblock %}
+{% block content %}
+<h1>Voice question</h1>
+<p class="lede">Upload one voice note. MP3, WAV, M4A, OGG, or WebM, max 10 MB.</p>
+<form id="voice-form" class="form">
+  <label>Audio file (required)
+    <input type="file" name="file" accept=".mp3,.wav,.m4a,.ogg,.webm" required />
+  </label>
+  <button type="submit" data-i18n="send">Transcribe</button>
+</form>
+<p class="loading" data-loading hidden>Loading…</p>
+<p class="error" data-error hidden></p>
+<div class="result" data-result hidden></div>
+{% endblock %}
